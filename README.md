@@ -52,10 +52,30 @@ Tesseract is an open-source Optical Character Recognition (OCR) engine maintaine
 # Getting Started
 
 ## Neural Mode installation
-pytorch
+```
+pip install -r requirements_neural.txt
+```
 
 ## Simple Mode installation
-pytesseract安装 包括tesseract
+```
+pip install -r requirements_simple.txt
+```
+Additional installation of library tesseract is required.
+
+### Linux
+```
+sudo apt-get update
+sudo apt-get install tesseract-ocr
+```
+
+### macOS
+```
+brew install tesseract
+```
+
+### Windows
+Please go to https://github.com/tesseract-ocr/tesseract for installation. 
+**⚠️ Notice:** Please don't forget to add the installation path into system env path.
 
 
 # Things To Do
@@ -65,19 +85,9 @@ pytesseract安装 包括tesseract
 # References
 
 
-两种方法
-    pytesseract安装 包括tesseract
-    pytorch
-
-切分方式的发现，避免使用rnn
-
-数据集缺失output补全
-
-测试集缺失 一张图 100
-
 
 pip install -r requirements_simple.txt
-需要额外安装 tesseract
+Additional installation of library tesseract is required 
 # Linux
 sudo apt-get update
 sudo apt-get install tesseract-ocr
