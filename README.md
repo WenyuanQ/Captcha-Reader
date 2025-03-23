@@ -74,7 +74,7 @@ brew install tesseract
 ```
 
 ### Windows
-Please go to https://github.com/tesseract-ocr/tesseract for installation. 
+Please go to https://github.com/tesseract-ocr/tesseract for installation.  
 **⚠️ Notice:** Please don't forget to add the installation path into system env path.
 
 
