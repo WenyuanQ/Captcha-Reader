@@ -50,7 +50,7 @@ Tesseract is an open-source Optical Character Recognition (OCR) engine maintaine
 
 
 # Getting Started
-
+This work is based on Python3.  
 ## Neural Mode installation
 ```
 pip install -r requirements_neural.txt
@@ -60,7 +60,7 @@ pip install -r requirements_neural.txt
 ```
 pip install -r requirements_simple.txt
 ```
-Additional installation of library tesseract is required.
+Additional installation of library tesseract is required.  
 
 ### Linux
 ```
@@ -74,36 +74,46 @@ brew install tesseract
 ```
 
 ### Windows
-Please go to https://github.com/tesseract-ocr/tesseract for installation.  
+Please go to [Tesseract Installation](https://github.com/tesseract-ocr/tesseract) for installation.  
 **⚠️ Notice:** Please don't forget to add the installation path into system env path.
 
 
+# How To Run
+## Neural Mode inference
+```python
+# no specification of saving path, result will be only printed on screen but won't be saved.
+python demo.py sampleCaptchas/input/input00.jpg --model neural
+# specification of saving path, result will be saved in the specific path.
+python demo.py sampleCaptchas/test/input100.jpg --model neural --save 'sampleCaptchas/test/output.txt'
+```
+
+## Simple Mode inference
+```python
+# no specification of saving path, result will be only printed on screen but won't be saved.
+python demo.py sampleCaptchas/input/input00.jpg --model simple
+# specification of saving path, result will be saved in the specific path.
+python demo.py sampleCaptchas/test/input100.jpg --model simple --save 'sampleCaptchas/test/output.txt'
+```
+
+## Others
+
+### Training Neural Mode
+```python
+python train.py
+```
+### ONNX Export
+```python
+python model.py
+```
+
+
+
 # Things To Do
-测试集缺失 一张图 100
+## Consturction of official testset
+An official evaluation set should be built to verify the performance of existing models.
+## Using RNN to improve the rubustness of the model.
+We can use RNN in the convolution-based model to make sure it can also recognize other formats of Captcha.
 
 
 # References
-
-
-
-pip install -r requirements_simple.txt
-Additional installation of library tesseract is required 
-# Linux
-sudo apt-get update
-sudo apt-get install tesseract-ocr
-# macOS
-brew install tesseract
-# Windows
-https://github.com/tesseract-ocr/tesseract
-add the installation path into system env path
-
-
-pip install -r requirements_neural.txt
-
-导出onnx: python model.py
-
-训练：python train.py
-
-inference：
-python demo.py sampleCaptchas/input/input00.jpg --model neural
-python demo.py sampleCaptchas/test/input100.jpg --model neural --save 'sampleCaptchas/test/output.txt'
+- [Tesseract](https://github.com/tesseract-ocr/tesseracts)
